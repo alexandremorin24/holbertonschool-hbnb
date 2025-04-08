@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="HBNB Logo" class="logo">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="place-details">
+            <h1>Beautiful Beach House</h1>
+            <div>
+                <p><strong>Host:</strong> John Doe</p>
+                <p><strong>Price per night:</strong> $150</p>
+                <p><strong>Description:</strong> A beautiful beach house with amazing views...</p>
+                <p><strong>Amenities:</strong> WiFi, Pool, Air Conditioning</p>
+            </div>
+        </section>
+        
+        <section id="reviews">
+            <h2>Reviews</h2>
+        
+            <div class="review-card">
+                <p><strong>Jane Smith:</strong></p>
+                <p>Great place to stay!</p>
+                <p>Rating: ★★★★☆</p>
+            </div>
+        
+            <div class="review-card">
+                <p><strong>Robert Brown:</strong></p>
+                <p>Amazing location and very comfortable.</p>
+                <p>Rating: ★★★★★</p>
+            </div>
+        </section>
+        
+        <form id="review-form">
+            <h2>Add a Review</h2>
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" required></textarea>
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="100">1 Star</option>
+                <option value="150">2 Star</option>
+                <option value="200">3 Star</option>
+                <option value="250">4 Star</option>
+                <option value="300">5 Star</option>
+                </select>
+            <button type="submit">Submit Review</button>
+        </form>
+
+
+        <footer class="footer">
+            <p>&copy; 2025 HBNB. All rights reserved.</p>
+        </footer>
+
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
