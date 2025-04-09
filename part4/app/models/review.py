@@ -35,5 +35,6 @@ class Review(BaseModel):
 			'text': self.text,
 			'rating': self.rating,
 			'place_id': self.place.id,
-			'user_id': self.user.id
+			'user': self.user.to_dict(),
+			'created_at': self.created_at.isoformat()
 		}

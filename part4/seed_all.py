@@ -2,6 +2,8 @@ from app import create_app, db, bcrypt
 from app.models.user import User
 from app.models.place import Place
 from app.models.amenity import Amenity
+from app.models.review import Review
+
 
 app = create_app()
 app.app_context().push()
@@ -116,3 +118,38 @@ places = [
 db.session.add_all(places)
 db.session.commit()
 print(f"✅ {len(places)} places added.")
+
+
+# 4. Reviews
+print("📝 Adding reviews...")
+
+reviews = [
+    Review(
+        text="Great stay with an amazing view!",
+        rating=5,
+        user_id=bob.id,
+        place_id=places[0].id  # Beach House
+    ),
+    Review(
+        text="Perfect for a quiet weekend getaway.",
+        rating=4,
+        user_id=alice.id,
+        place_id=places[1].id  # Cozy Cabin
+    ),
+    Review(
+        text="Very modern and well located.",
+        rating=5,
+        user_id=bob.id,
+        place_id=places[2].id  # Modern Apartment
+    ),
+    Review(
+        text="Lovely lake views, would visit again.",
+        rating=4,
+        user_id=bob.id,
+        place_id=places[4].id  # Lake House
+    ),
+]
+
+db.session.add_all(reviews)
+db.session.commit()
+print(f"✅ {len(reviews)} reviews added.")

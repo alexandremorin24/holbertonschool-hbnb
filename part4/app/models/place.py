@@ -86,7 +86,7 @@ class Place(BaseModel):
             'price': self.price,
             'latitude': self.latitude,
             'longitude': self.longitude,
-            'owner': self.owner.to_dict(),
-            'amenities': self.amenities,
-            'reviews': self.reviews
+            'owner': self.owner.to_dict() if self.owner else None,
+            'amenities': [a.to_dict() for a in self.amenities.all()],
+            'reviews': [r.to_dict() for r in self.reviews.all()]
         }
