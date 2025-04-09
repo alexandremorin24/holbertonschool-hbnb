@@ -12,7 +12,7 @@ db = SQLAlchemy()
 
 def create_app(config_class=config.DevelopmentConfig):
     app = Flask(__name__)
-    CORS(app)
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
     app.config.from_object(config_class)
 
     import os
@@ -23,7 +23,6 @@ def create_app(config_class=config.DevelopmentConfig):
     jwt.init_app(app)
     db.init_app(app)
 
-    # 👇 Moved INSIDE to avoid circular import
     from app.api.v1.users import api as users_ns
     from app.api.v1.amenities import api as amenities_ns
     from app.api.v1.places import api as places_ns
